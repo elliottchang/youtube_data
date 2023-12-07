@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch History</title>
+  </head>
+  <body>
+    <h1>Watch History</h1>
+    <ul>
+      {% for video in video_data %}
+      <li>
+        <strong>{{ video['Video Title'] }}</strong> - {{ video['Channel Name']
+        }}
+        <img src="{{ video['Thumbnail URL'] }}" alt="Thumbnail" />
+        <br />
+        Tags: {{ video['Tags']|join(', ') }}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
